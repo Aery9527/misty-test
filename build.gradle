@@ -1,0 +1,34 @@
+plugins {
+    id 'java-library'
+    id 'idea'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'org.springframework.boot' version '3.1.4'
+}
+
+ext {
+    VERSION_JAVA = '17'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of("${VERSION_JAVA}")
+    }
+}
+
+group = 'org.misty'
+//noinspection GroovyUnusedAssignment
+archivesBaseName = 'misty-test'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'ch.qos.logback:logback-classic'
+}
+
+test {
+    useJUnitPlatform()
+}
