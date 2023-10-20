@@ -6,7 +6,7 @@ class AssertionsExTest {
 
     @Test
     void assertThrown() {
-        AssertionsEx.asserAwaretThrown(this::thrown).isInstanceOf(RuntimeException.class);
+        AssertionsEx.asserAwareThrown(this::thrown).isInstanceOf(RuntimeException.class);
     }
 
     public void thrown() {
