@@ -10,7 +10,7 @@ public class AssertionsEx extends Assertions {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AssertionsEx.class);
 
-    public static AbstractThrowableAssert<?, ? extends Throwable> asserAwareThrown(ThrowableAssert.ThrowingCallable throwingCallable) {
+    public static AbstractThrowableAssert<?, ? extends Throwable> assertThrown(ThrowableAssert.ThrowingCallable throwingCallable) {
         return Assertions.assertThatThrownBy(() -> {
             try {
                 throwingCallable.call();

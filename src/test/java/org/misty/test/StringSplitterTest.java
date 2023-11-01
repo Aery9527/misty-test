@@ -141,7 +141,7 @@ class StringSplitterTest {
 
         // removeConverter
         StringSplitter.removeConverter(targetType);
-        AssertionsEx.asserAwareThrown(() -> new StringSplitter().convert("kerker", targetType))
+        AssertionsEx.assertThrown(() -> new StringSplitter().convert("kerker", targetType))
                 .isInstanceOf(ArgumentConversionException.class);
         AssertionsEx.assertThat(StringSplitter.getConverterHandleTypes())
                 .contains(String[].class, List.class, Set.class);
